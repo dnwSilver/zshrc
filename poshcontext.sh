@@ -9,6 +9,6 @@ function set_poshcontext() {
     fi
     if [ -f "global.json" ]; then
         PROJECT=$(echo $(yq '[ .variables.MAIN_PROJECT_PATH]' .gitlab-ci.yml)/$(yq -r '[ .variables.MAIN_PROJECT_NAME]' .gitlab-ci.yml) | sed -e s/\"//g -e s/-//g -e "s/ //g")
-        export OLD_VERSION=$(awk -F '[<>]' '/PackageVersion/{print $3}' $PROJECT)
+        export DOTNETPROJ=$(awk -F '[<>]' '/PackageVersion/{print $3}' $PROJECT)
     fi
 }
