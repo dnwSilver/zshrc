@@ -1,4 +1,5 @@
 #!/bin/bash
+## Need to install: xmlstarlet, jq.
 
 function up_version() {
     OLD_VERSION=$1
