@@ -24,9 +24,9 @@ alias yd="yarn dev"                                                 # run develo
 alias yb="yarn build"                                               # build project
 alias ys="yarn start"                                               # start project
 alias yp="rma && y && yb && ys"                                     # cleanup deps, build and run project
-alias yumj="set_version_typrescript \"major\""                      # up major version
-alias yumn="set_version_typrescript \"minor\""                      # up minor version
-alias yup="set_version_typrescript \"patch\""                       # up patch version
+alias yvmj="set_version_typrescript \"major\""                      # up major version
+alias yvmn="set_version_typrescript \"minor\""                      # up minor version
+alias yvp="set_version_typrescript \"patch\""                       # up patch version
 
 # DOTNET
 alias dnb="dotnet build"                                            # build project
@@ -35,6 +35,6 @@ alias dnw="dotnet watch"                                            # watch file
 alias dnt="dotnet test"                                             # run all tests
 alias dnr="dotnet run"                                              # run application
 alias dnp="dnc && dnb && dnt && dnr"                                # all cleanup and run application
-alias dnumj="set_version_dotnet \"major\""                          # up major version
-alias dnumn="set_version_dotnet \"minor\""                          # up minor version
-alias dnup="set_version_dotnet \"patch\""                           # up patch version
+alias dnvmj="set_version_dotnet \"major\""                          # up major version
+alias dnvmn="set_version_dotnet \"minor\""                          # up minor version
+alias dnvp="set_version_dotnet \"patch\""                           # up patch version
