@@ -9,9 +9,7 @@ alias gcmj="gitmoji -c"                                             # commit bui
 alias grst="git stash && git stash clear"                           # remove all changes
 alias ggpcs="ggp -o ci.skip"                                        # push commit without ci/cd
 alias gfu="ggl && gfa"                                              # pull new commit and branches
-gnt() {                                                             # create tag and push it
-    git tag $1 && git push origin $1
-}
+alias gtp="git tag $1 && git push origin"                           # create tag and push with current version
 
 # YARN
 alias rmnm="rm -rf node_modules && echo ' 󰜴  Clear node modules'"  # remove node_modules
