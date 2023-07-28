@@ -35,12 +35,12 @@ function set_version_typescript() {
     NEW_VERSION=$(up_version $PACKAGE_VERSION $1)
     echo $(jq --arg v "$NEW_VERSION" '.version=$v' package.json) > package.json
     npx prettier package.json --write --loglevel=silent
-    echo " 🐝 Current version $PACKAGE_VERSION up to $NEW_VERSION."
+    echo "🐝 Current version $PACKAGE_VERSION up to $NEW_VERSION."
 }
 
 ### DOTNET
 function get_project_dotnet() {
-    echo $(yq '[ .variables.MAIN_PROJECT_PATH]' .gitlab-ci.yml)/$(yq -r '[ .variables.MAIN_PROJECT_NAME]' .gitlab-ci.yml) | sed -e s/\"//g -e s/-//g -e "s/ //g")
+    echo $(yq '[ .variables.MAIN_PROJECT_PATH]' .gitlab-ci.yml)/$(yq -r '[ .variables.MAIN_PROJECT_NAME]' .gitlab-ci.yml) | sed -e s/\"//g -e s/-//g -e "s/ //g"
 }
 
 function get_version_dotnet() {

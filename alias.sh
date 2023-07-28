@@ -22,9 +22,9 @@ alias yd="yarn dev"                                                 # run develo
 alias yb="yarn build"                                               # build project
 alias ys="yarn start"                                               # start project
 alias yp="rma && y && yb && ys"                                     # cleanup deps, build and run project
-alias yvmj="set_version_typrescript \"major\""                      # up major version
-alias yvmn="set_version_typrescript \"minor\""                      # up minor version
-alias yvp="set_version_typrescript \"patch\""                       # up patch version
+alias yvmj="set_version_typescript \"major\""                       # up major version
+alias yvmn="set_version_typescript \"minor\""                       # up minor version
+alias yvp="set_version_typescript \"patch\""                        # up patch version
 
 # DOTNET
 alias dnb="dotnet build"                                            # build project
