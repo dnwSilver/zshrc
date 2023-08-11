@@ -9,7 +9,7 @@ alias gcmj="gitmoji -c"                                             # commit bui
 alias grst="git stash && git stash clear"                           # remove all changes
 alias ggpcs="ggp -o ci.skip"                                        # push commit without ci/cd
 alias gfu="ggl && gfa"                                              # pull new commit and branches
-alias gtp="git tag $1 && git push origin"                           # create tag and push with current version
+alias gtp="create_and_push_tag"                                     # create tag and push with current version
 
 # YARN
 alias rmnm="rm -rf node_modules && echo ' 󰜴  Clear node modules'"  # remove node_modules
@@ -36,3 +36,8 @@ alias dnp="dnc && dnb && dnt && dnr"                                # all cleanu
 alias dnvmj="set_version_dotnet \"major\""                          # up major version
 alias dnvmn="set_version_dotnet \"minor\""                          # up minor version
 alias dnvp="set_version_dotnet \"patch\""                           # up patch version
+
+# RELEASES
+
+alias r="gswm && gfu && gtp"
+alias rp="gswd && gfu && gtp"

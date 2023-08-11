@@ -1,5 +1,9 @@
 #!/bin/bash
 ## Need to install: xmlstarlet, jq.
+RED="\e[91m"
+GREEN="\e[32m"
+BLUE="\e[94m"
+NC="\e[0m"
 
 function up_version() {
     OLD_VERSION=$1
@@ -35,7 +39,7 @@ function set_version_typescript() {
     NEW_VERSION=$(up_version $PACKAGE_VERSION $1)
     echo $(jq --arg v "$NEW_VERSION" '.version=$v' package.json) > package.json
     npx prettier package.json --write --loglevel=silent
-    echo "🐝 Current version $PACKAGE_VERSION up to $NEW_VERSION."
+    echo " ${BLUE}󱜱${NC} Current version $PACKAGE_VERSION up to ${GREEN}$NEW_VERSION${NC}."
 }
 
 ### DOTNET
@@ -54,6 +58,6 @@ function set_version_dotnet() {
     NEW_VERSION=$(up_version $OLD_VERSION $1)
     xmlstarlet edit --inplace --update "/Project/PropertyGroup/PackageVersion" --value "$NEW_VERSION" $PROJECT
     xmlstarlet edit --inplace --update "/Project/PropertyGroup/AssemblyVersion" --value "$NEW_VERSION" $PROJECT
-    echo " 🐝 Current version $OLD_VERSION up to $NEW_VERSION."
+    echo " ${BLUE}}󱜱${ENDCOLOR} Current version $OLD_VERSION up to ${GREEN}$NEW_VERSION${NC}.}"
 }
 
