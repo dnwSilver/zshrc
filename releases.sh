@@ -17,7 +17,7 @@ function create_and_push_tag ()
   fi
 } 
 
-function create_release ()
+function release_create ()
 {
   git switch $(git_develop_branch) > /dev/null 2>&1 || return
 
@@ -32,8 +32,8 @@ function create_release ()
   echo -e " ${GREEN}󱓊${NC} Create new release branch ${GREEN}$(current_branch)${NC}." 
 }
 
-function push_release () 
+function release_push () 
 {
-  git push origin $(current_branch)
+  git push origin $(current_branch) > /dev/null 2>&1 || return
   echo -e " ${GREEN}󱓎${NC} Push release branch ${GREEN}$(current_branch)${NC}." 
 }

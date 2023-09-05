@@ -39,7 +39,13 @@ alias dnvmn="set_version_dotnet \"minor\""                          # up minor v
 alias dnvp="set_version_dotnet \"patch\""                           # up patch version
 
 # RELEASES
+alias rc="release_create"
+alias rp="release_push"
+alias cch="changelog_change_header"
+alias crec="changelog_remove_empty_chapters"
+alias caub="changelog_add_unreleased_block"
+alias cc="changelog_commit"
+alias rs="rc && cch && crec && caub && cc && rp" 
 
-alias rc="gswd && gfu && create_release && push_release"
 #alias r="gswm && gfu && gtp"
 #alias rp="gswd && gfu && gtp"
