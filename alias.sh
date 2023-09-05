@@ -3,6 +3,7 @@
 # SPECIAL
 alias ll="exa -la"                                                  # show all files and directories
 alias x="clear"                                                     # clear terminal
+alias vpn="sudo openfortivpn -c ~/.config/openfortivpn/config"      # connect to secure network for development
 
 # GIT
 alias gcmj="gitmoji -c"                                             # commit builder with emoji
@@ -12,9 +13,9 @@ alias gfu="ggl && gfa"                                              # pull new c
 alias gtp="create_and_push_tag"                                     # create tag and push with current version
 
 # YARN
-alias rmnm="rm -rf node_modules && echo ' 󰜴  Clear node modules'"  # remove node_modules
-alias rmd="rm -rf dist && echo ' 󰜴  Clear dist'"                   # remove dist
-alias rmyc="rm -rf .yarn/cache && echo ' 󰜴  Clear yarn cache'"     # remove yarn cache
+alias rmnm="rm -rf node_modules && echo '  Clear node modules'"  # remove node_modules
+alias rmd="rm -rf dist && echo '  Clear dist'"                   # remove dist
+alias rmyc="rm -rf .yarn/cache && echo '  Clear yarn cache'"     # remove yarn cache
 alias rma="rmnm && rmd && rmyc"                                     # remove node_moudels, dist, yarn cache
 alias y="yarn"                                                      # yarn install
 alias ysb="yarn storybook:run"                                      # run storybook
@@ -39,5 +40,6 @@ alias dnvp="set_version_dotnet \"patch\""                           # up patch v
 
 # RELEASES
 
-alias r="gswm && gfu && gtp"
-alias rp="gswd && gfu && gtp"
+alias rc="gswd && gfu && create_release && push_release"
+#alias r="gswm && gfu && gtp"
+#alias rp="gswd && gfu && gtp"
