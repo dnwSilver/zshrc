@@ -38,7 +38,7 @@ function set_version_typescript() {
     PACKAGE_VERSION=$(get_version_typescript)
     NEW_VERSION=$(up_version $PACKAGE_VERSION $1)
     echo $(jq --arg v "$NEW_VERSION" '.version=$v' package.json) > package.json
-    npx prettier package.json --write --loglevel=silent
+    npx prettier package.json --write --log-level=silent
     echo " ${BLUE}󱜱${NC} Current version $PACKAGE_VERSION up to ${GREEN}$NEW_VERSION${NC}."
 }
 
