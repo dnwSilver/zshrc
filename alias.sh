@@ -48,5 +48,6 @@ alias cc="changelog_commit"
 
 alias release-start="rc && cch && crec && caub && cc && rp" 
 alias release-deploy="create_and_push_tag"
+alias release-close="release_close"
 #alias r="gswm && gfu && gtp"
 #alias rp="gswd && gfu && gtp"

@@ -63,7 +63,7 @@ function release_close()
   update_current_branch
 
   git merge $(git_main_branch) > /dev/null 2>&1 || return
-  echo -e " ${GREEN}${NC} Merge branch ${GREEN}$(current_branch)${NC} with ${GREEN}$(git_main_branch)${NC}." 
+  echo -e " ${GREEN}󰘬${NC} Merge branch ${GREEN}$(current_branch)${NC} with ${GREEN}$(git_main_branch)${NC}." 
   
   git push origin $(current_branch) -o ci.skip > /dev/null 2>&1 || return
   echo -e " ${GREEN}󱓎${NC} Push branch ${GREEN}$(current_branch)${NC}." 
