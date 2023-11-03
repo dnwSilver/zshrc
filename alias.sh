@@ -11,6 +11,7 @@ alias grst="git stash && git stash clear"                           # remove all
 alias ggpcs="ggp -o ci.skip"                                        # push commit without ci/cd
 alias gfu="ggl && gfa"                                              # pull new commit and branches
 alias gtp="create_and_push_tag"                                     # create tag and push with current version
+alias gmod="git merge origin/$(git_develop_branch)"                 # merge with origin dev
 
 # YARN
 alias rmnm="rm -rf node_modules && echo '  Clear node modules'"  # remove node_modules
