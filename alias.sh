@@ -12,9 +12,15 @@ alias ggpcs="ggp -o ci.skip"                                        # push commi
 alias gfu="ggl && gfa"                                              # pull new commit and branches
 alias gtp="create_and_push_tag"                                     # create tag and push with current version
 alias gmod="git merge origin/$(git_develop_branch)"                 # merge with origin dev
+alias lfsr='
+git lfs uninstall
+git reset --hard
+git lfs install
+git lfs pull
+'           
 
 # YARN
-alias rmnm="rm -rf node_modules && echo '  Clear node modules'"  # remove node_modules
+alias rmnm="rm -rf node_modules && echo ' 📦 Clear node modules'"  # remove node_modules
 alias rmd="rm -rf dist && echo '  Clear dist'"                   # remove dist
 alias rmyc="rm -rf .yarn/cache && echo '  Clear yarn cache'"     # remove yarn cache
 alias rma="rmnm && rmd && rmyc"                                     # remove node_moudels, dist, yarn cache
@@ -27,6 +33,7 @@ alias yp="rma && y && yb && ys"                                     # cleanup de
 alias yvmj="set_version_typescript \"major\""                       # up major version
 alias yvmn="set_version_typescript \"minor\""                       # up minor version
 alias yvp="set_version_typescript \"patch\""                        # up patch version
+alias dc="echo \" 📦 Dependencies count: \" && npm ls --depth 0 | wc -l"
 
 # DOTNET
 alias dnb="dotnet build"                                            # build project
