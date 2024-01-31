@@ -44,6 +44,11 @@
           }
         },
         {
+          "type": "go",
+          "style": "plain",
+          "template": "<#F3EFF5>with</> <#7FD5EA> {{ .Full }}</> "
+        },
+        {
           "type": "dotnet",
           "style": "plain",
           "foreground": "#9780e5",
