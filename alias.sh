@@ -26,11 +26,13 @@ git lfs install
 git lfs pull
 '           
 
-# YARN
+# Dependencies
 alias rmnm="rm -rf node_modules && echo '  Clear packages.'"       # remove node_modules
 alias rmd="rm -rf dist && echo '  Clear bineries.'"                # remove dist
 alias rmyc="rm -rf .yarn/cache && echo '  Clear yarn cache'"       # remove yarn cache
 alias rma="rmnm && rmd && rmyc"                                     # remove node_moudels, dist, yarn cache
+
+# YARN
 alias y="yarn"                                                      # yarn install
 alias ysb="yarn storybook:run"                                      # run storybook
 alias yd="yarn dev"                                                 # run development environment
@@ -38,9 +40,21 @@ alias yb="yarn build"                                               # build proj
 alias ybf="rmd && yb"                                               # build project force
 alias ys="yarn start"                                               # start project
 alias yp="rma && y && yb && ys"                                     # cleanup deps, build and run project
-alias yvmj="set_version_typescript \"major\""                       # up major version
-alias yvmn="set_version_typescript \"minor\""                       # up minor version
-alias yvp="set_version_typescript \"patch\""               # up patch version
+
+# NPM
+alias n="npm install"
+alias nsb="nmp run storybook:run"
+alias nd="npm run dev"
+alias nb="npm run build"
+alias nbf="rmd && nb"
+alias ns="npm run start"
+alias np="rma && n && nb && ns"
+alias nt="nb && npm run test:end2end"
+
+# VERSION
+alias vmj="set_version_typescript \"major\""                        # up major version
+alias vmn="set_version_typescript \"minor\""                        # up minor version
+alias vp="set_version_typescript \"patch\""                         # up patch version
 alias dc="echo '   Dependencies count: ' && npm ls --depth 0 | wc -l"
 
 # DOTNET
