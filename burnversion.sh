@@ -8,11 +8,11 @@ NC="\e[0m"
 function up_version() {
     OLD_VERSION=$1
     UP_TYPE=$2
-    
+
     MAJOR=$(cut -d '.' -f 1 <<< $OLD_VERSION)
     MINOR=$(cut -d '.' -f 2 <<< $OLD_VERSION)
     PATCH=$(cut -d '.' -f 3 <<< $OLD_VERSION)
-    
+
     if [[ "$UP_TYPE" = "major" ]]
     then
         MAJOR=$(($MAJOR+1))
@@ -25,7 +25,7 @@ function up_version() {
     else
         PATCH=$(($PATCH+1))
     fi
-    
+
     echo $MAJOR.$MINOR.$PATCH
 }
 
@@ -54,7 +54,7 @@ function get_version_dotnet() {
 
 function set_version_dotnet() {
     PROJECT=$(get_project_dotnet)
-    OLD_VERSION=$(get_version_dotnet)    
+    OLD_VERSION=$(get_version_dotnet)
     NEW_VERSION=$(up_version $OLD_VERSION $1)
     xmlstarlet edit --inplace --update "/Project/PropertyGroup/PackageVersion" --value "$NEW_VERSION" $PROJECT
     xmlstarlet edit --inplace --update "/Project/PropertyGroup/AssemblyVersion" --value "$NEW_VERSION" $PROJECT
