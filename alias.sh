@@ -84,30 +84,5 @@ alias release-close="release_close"
 
 
 # GLOBAL ALIASES
-alias deps='
-if [ -f "package-lock.json" ]; then n; fi;
-if [ -f "yarn.lock" ]; then y; fi;
-if [ -f "bun.lockb" ]; then echo "Not implimented"; fi;
-'
-alias build='
-if [ -f "package-lock.json" ]; then rmb && nb; fi;
-if [ -f "yarn.lock" ]; then rmb && yb; fi;
-if [ -f "bun.lockb" ]; then dnc && dnb; fi;
-'
-alias e2e='
-if [ -f "package-lock.json" ]; then nt; fi;
-if [ -f "yarn.lock" ]; then yarn test:e2e; fi;
-if [ -f "bun.lockb" ]; then echo "Not implimented"; fi;
-'
-alias e2eui='
-if [ -f "package-lock.json" ]; then npm run test:end2end:ui; fi;
-if [ -f "yarn.lock" ]; then yarn test:e2e --ui; fi;
-if [ -f "bun.lockb" ]; then echo "Not implimented"; fi;
-'
-alias dev='
-if [ -f "package-lock.json" ]; then nd; fi;
-if [ -f "yarn.lock" ]; then yarn dev; fi;
-if [ -f "bun.lockb" ]; then echo "Not implimented"; fi;
-'
 alias pull='gfu'
 alias push='ggp'
