@@ -1,9 +1,15 @@
 #!/bin/bash
-## Need to install: xmlstarlet, jq.
+## Need to install: xmlstarlet, yq, jq, prettier.
 RED="\e[91m"
 GREEN="\e[32m"
-BLUE="\e[94m"
+YELLOW="\e[93m"
 NC="\e[0m"
+
+which node | grep "not found"
+which jq | grep "not found"
+which xmlstarlet | grep "not found"
+which yq | grep "not found"
+which npx | grep "not found"
 
 function up_version() {
     OLD_VERSION=$1
@@ -39,7 +45,7 @@ function set_version_typescript() {
     NEW_VERSION=$(up_version $PACKAGE_VERSION $1)
     echo $(jq --arg v "$NEW_VERSION" '.version=$v' package.json) > package.json
     npx prettier package.json --write --log-level=silent
-    echo " ${BLUE}󱜱${NC} Current version $PACKAGE_VERSION up to ${GREEN}$NEW_VERSION${NC}."
+    echo " ${YELLOW}󱜱${NC} Current version $PACKAGE_VERSION up to ${GREEN}$NEW_VERSION${NC}."
 }
 
 ### DOTNET
@@ -58,6 +64,6 @@ function set_version_dotnet() {
     NEW_VERSION=$(up_version $OLD_VERSION $1)
     xmlstarlet edit --inplace --update "/Project/PropertyGroup/PackageVersion" --value "$NEW_VERSION" $PROJECT
     xmlstarlet edit --inplace --update "/Project/PropertyGroup/AssemblyVersion" --value "$NEW_VERSION" $PROJECT
-    echo " ${BLUE}}󱜱${ENDCOLOR} Current version $OLD_VERSION up to ${GREEN}$NEW_VERSION${NC}.}"
+    echo " ${YELLOW}}󱜱${ENDCOLOR} Current version $OLD_VERSION up to ${GREEN}$NEW_VERSION${NC}.}"
 }
 

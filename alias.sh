@@ -51,12 +51,6 @@ alias ns="npm run start"
 alias np="rma && n && nb && ns"
 alias nt="npm run test:end2end"
 
-# VERSION
-alias vmj="set_version_typescript \"major\""                        # up major version
-alias vmn="set_version_typescript \"minor\""                        # up minor version
-alias vp="set_version_typescript \"patch\""                         # up patch version
-alias dc="echo '   Dependencies count: ' && npm ls --depth 0 | wc -l"
-
 # DOTNET
 alias dnb="dotnet build"                                            # build project
 alias dnc="dotnet clean"                                            # cleanup bin and obj files
@@ -81,7 +75,7 @@ alias release-deploy="create_and_push_tag"
 alias release-close="release_close"
 #alias r="gswm && gfu && gtp"
 #alias rp="gswd && gfu && gtp"
-
+alias dc="echo '   Dependencies count: ' && npm ls --depth 0 | wc -l"
 
 # GLOBAL ALIASES
 alias pull='gfu'

@@ -1,0 +1,7 @@
+source "$(dirname "$0")/poshcontext.sh"
+
+source "$(dirname "$0")/version/functions.sh"
+source "$(dirname "$0")/version/alias.sh"
+
+source "$(dirname "$0")/changelog.sh"
+source "$(dirname "$0")/alias.sh"
