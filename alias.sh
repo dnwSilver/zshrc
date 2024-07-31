@@ -1,30 +1,10 @@
 #!/bin/bash
 
 # SPECIAL
-alias ll="eza --tree --icons --level 1 -l"                          # show all files and directories
-alias x="clear"                                                     # clear terminal
+alias ll="eza --tree --icons --level 1 -l"                        # show all files and directories
+alias lla="eza --tree --icons --all --level 1 -l"                 # show all files and directories
+alias x="clear"                                                   # clear terminal
 alias vpn="sudo openfortivpn -c ~/.config/openfortivpn/config"      # connect to secure network for development
-
-# GIT
-alias gcmj="gitmoji -c"                                             # commit builder with emoji
-alias grst="git stash && git stash clear"                           # remove all changes
-alias ggpcs="ggp -o ci.skip"                                        # push commit without ci/cd
-alias gfu="ggl && gfa"                                              # pull new commit and branches
-alias ghrc="git reset --hard HEAD && git clean -qfdx"               # ghrc and clean
-alias gtp="create_and_push_tag"                                     # create tag and push with current version
-alias gmod='
-CURRENT_BRANCH=$(git_current_branch)
-gswd
-gfu
-gsw $CURRENT_BRANCH
-git merge origin/$(git_develop_branch)
-'                 # merge with origin dev
-alias lfsr='
-git lfs uninstall
-git reset --hard
-git lfs install
-git lfs pull
-'
 
 # Dependencies
 alias rmnm="rm -rf node_modules && echo '  Clear packages.'"       # remove node_modules
@@ -71,12 +51,8 @@ alias caub="changelog_add_unreleased_block"
 alias cc="changelog_commit"
 
 alias release-start="rc && cch && crec && caub && cc && rp"
-alias release-deploy="create_and_push_tag"
+alias release-deploy="git_create_tag_and_push"
 alias release-close="release_close"
 #alias r="gswm && gfu && gtp"
 #alias rp="gswd && gfu && gtp"
 alias dc="echo '   Dependencies count: ' && npm ls --depth 0 | wc -l"
-
-# GLOBAL ALIASES
-alias pull='gfu'
-alias push='ggp'
