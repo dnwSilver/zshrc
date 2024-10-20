@@ -8,3 +8,17 @@ source "$(dirname "$0")/git/alias.sh"
 
 source "$(dirname "$0")/changelog.sh"
 source "$(dirname "$0")/alias.sh"
+
+
+
+
+
+update_vscode () {
+  curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/visual-studio-code-bin.tar.gz
+  tar -xvf visual-studio-code-bin.tar.gz
+  cd visual-studio-code-bin
+  yes | Y | makepkg -si
+  cd -
+  rm -rf visual-studio-code-bin
+  rm visual-studio-code-bin.tar.gz
+}
