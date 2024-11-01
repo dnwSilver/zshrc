@@ -7,6 +7,16 @@
       "alignment": "left",
       "segments": [
         {
+          "type": "status",
+          "style": "plain",
+          "foreground": "#00897b",
+          "foreground_templates": ["{{ if .Error }}#e91e63{{ end }}"],
+          "template": " ",
+          "properties": {
+            "always_enabled": true
+          }
+        },
+        {
           "type": "path",
           "style": "plain",
           "foreground": "#15C2CB",
@@ -31,10 +41,16 @@
           "template": "{{if .Version}}<#F3EFF5>is</> \uf487 {{.Version}} {{end}}"
         },
         {
+          "type": "react",
+          "style": "plain",
+          "foreground": "#61dafb",
+          "template": "{{ if .Full }}<#F3EFF5>with</>  {{ .Full }} {{end}}"
+        },
+        {
           "type": "node",
           "style": "plain",
           "foreground": "#43853D",
-          "template": "{{ if .Env.REACT}}<#F3EFF5>with</> <#61DAFB>\ue7ba {{ .Env.REACT }}</> {{ end }}<#F3EFF5>via</> \ue718 {{ .Full }}{{ if .Env.TS }} <#F3EFF5>and</> <#3178C6>\ue628 {{ .Env.TS }}</>{{ end }} <#F3EFF5>and</>{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ .Env.MANAGER }}</>{{ end }} ",
+          "template": "<#F3EFF5>via</> \ue718 {{ .Full }}{{ if .Env.TS }} <#F3EFF5>and</> <#3178C6>\ue628 {{ .Env.TS }}</>{{ end }} <#F3EFF5>and</>{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ .Env.MANAGER }}</>{{ end }} ",
           "properties": {
             "fetch_version": true,
             "fetch_package_manager": true,
@@ -52,13 +68,24 @@
           "type": "dotnet",
           "style": "plain",
           "foreground": "#9780e5",
-          "template": "<#F3EFF5>via</> \uE77F {{ .Full }} {{if .Env.DOTNETPROJ}}<#F3EFF5>is</> <#5EADF2>\uf487 {{.Env.DOTNETPROJ}}</>{{end}}"
+          "template": "<#F3EFF5>via</>  {{ .Full }} "
+        },
+        {
+          "type": "kotlin",
+          "style": "plain",
+          "foreground": "#906cff",
+          "template": "<#F3EFF5>via</> <b>K</b> {{ .Full }} "
         }
       ]
     },
     {
       "alignment": "right",
       "segments": [
+        {
+          "type": "upgrade",
+          "style": "plain",
+          "foreground": "#FFD664"
+        },
         {
           "foreground": "#a9ffb4",
           "style": "plain",
