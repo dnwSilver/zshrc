@@ -58,7 +58,6 @@
         },
         {
           "properties": {
-            "cache_duration": "1h",
             "display_mode": "context",
             "fetch_package_manager": true,
             "fetch_version": true,

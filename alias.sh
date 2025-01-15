@@ -22,14 +22,20 @@ alias ys="yarn start"                                               # start proj
 alias yp="rma && y && yb && ys"                                     # cleanup deps, build and run project
 
 # NPM
-alias n="npm install"
-alias nsb="nmp run storybook:run"
-alias nd="npm run dev"
-alias nb="npm run build"
-alias nbf="rmb && nb"
-alias ns="npm run start"
-alias np="rma && n && nb && ns"
-alias nt="npm run test:end2end"
+alias ni="npm install"                          # install deps
+alias nrsb="nmp run storybook:build"            # build storybook
+alias nrsr="nmp run storybook:run"              # run storybook
+alias nrd="npm run dev"                         # run with development environment
+alias nrb="npm run build"                       # build project
+alias nrs="npm run start"                       # start project from dist
+alias nrqf="npm run quality:codestyle"          # verify code quality
+alias nrqs="npm run quality:css"                # verify styles quality
+alias nrql="npm run quality:lint"               # verify linting
+alias nrqt="npm run quality:type"               # verify types
+alias nrte2e="npm run test:end2end"             # run end to end tests
+alias nrtsd="npm run test:screenshots:docker"   # run docker for screenshots test
+alias nrtsu="npm run test:screenshots:update"   # update screenshots
+alias nrtu="npm run test:unit"                  # run unit tests
 
 # DOTNET
 alias dnb="dotnet build"                                            # build project
