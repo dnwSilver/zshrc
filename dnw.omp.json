@@ -14,9 +14,7 @@
           "foreground": "#00897b",
           "type": "status",
           "style": "plain",
-          "foreground_templates": [
-            "{{ if .Error }}#e91e63{{ end }}"
-          ]
+          "foreground_templates": ["{{ if .Error }}#e91e63{{ end }}"]
         },
         {
           "properties": {
@@ -58,19 +56,6 @@
         },
         {
           "properties": {
-            "display_mode": "context",
-            "fetch_package_manager": true,
-            "fetch_version": true,
-            "npm_icon": "<#FE4A49> \ue71e ",
-            "yarn_icon": "<#117CAD> \ue6a7 "
-          },
-          "template": "<#F3EFF5>via</> \ue718 {{ .Full }}{{ if .Env.TS }} <#F3EFF5>and</> <#3178C6>\ue628 {{ .Env.TS }}</>{{ end }} <#F3EFF5>and</>{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ .Env.MANAGER }}</>{{ end }} ",
-          "foreground": "#43853D",
-          "type": "node",
-          "style": "plain"
-        },
-        {
-          "properties": {
             "cache_duration": "1h"
           },
           "template": "<#F3EFF5>with</> <#7FD5EA>\ue627 {{ .Full }}</> ",
@@ -78,22 +63,28 @@
           "style": "plain"
         },
         {
-          "properties": {
-            "cache_duration": "1h"
-          },
+          "type": "node",
+          "style": "plain",
+          "foreground": "#6CA35E",
+          "template": "<#F3EFF5>via</> 󰎙 {{ .Full }} "
+        },
+        {
           "template": "<#F3EFF5>via</> \ue77f {{ .Full }} ",
           "foreground": "#9780e5",
           "type": "dotnet",
           "style": "plain"
         },
         {
-          "properties": {
-            "cache_duration": "1h"
-          },
           "template": "<#F3EFF5>via</> <b>K</b> {{ .Full }} ",
           "foreground": "#906cff",
           "type": "kotlin",
           "style": "plain"
+        },
+        {
+          "type": "npm",
+          "style": "plain",
+          "foreground": "red",
+          "template": "<#F3EFF5>and</>  {{ .Full }} "
         }
       ]
     },
@@ -101,22 +92,6 @@
       "type": "prompt",
       "alignment": "right",
       "segments": [
-        {
-          "properties": {
-            "cache_duration": "none"
-          },
-          "foreground": "#FFD664",
-          "type": "upgrade",
-          "style": "plain"
-        },
-        {
-          "properties": {
-            "cache_duration": "none"
-          },
-          "foreground": "#a9ffb4",
-          "type": "text",
-          "style": "plain"
-        },
         {
           "properties": {
             "cache_duration": "none",

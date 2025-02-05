@@ -14,8 +14,7 @@ source "$CURRENT_DIRNAME/changelog.sh"
 source "$CURRENT_DIRNAME/releases.sh"
 source "$CURRENT_DIRNAME/alias.sh"
 
-set_poshcontext
-
+# set_poshcontext
 eval "$(oh-my-posh init zsh --config $CURRENT_DIRNAME/dnw.omp.json)"
 
 update_vscode () {

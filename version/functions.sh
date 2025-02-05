@@ -5,11 +5,11 @@ GREEN="\e[32m"
 YELLOW="\e[93m"
 NC="\e[0m"
 
-which node | grep "not found"
-which jq | grep "not found"
-which xmlstarlet | grep "not found"
-which yq | grep "not found"
-which npx | grep "not found"
+# which node | grep "not found"
+# which jq | grep "not found"
+# which xmlstarlet | grep "not found"
+# which yq | grep "not found"
+# which npx | grep "not found"
 
 function up_version() {
     OLD_VERSION=$1
