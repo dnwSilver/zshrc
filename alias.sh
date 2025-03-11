@@ -62,3 +62,7 @@ alias release-close="release_close"
 #alias r="gswm && gfu && gtp"
 #alias rp="gswd && gfu && gtp"
 alias dc="echo '   Dependencies count: ' && npm ls --depth 0 | wc -l"
+
+# TRANSLATE
+alias ru="trans -source en -target ru"
+alias en="trans -source ru -target en"
