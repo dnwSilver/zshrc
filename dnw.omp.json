@@ -29,9 +29,19 @@
         {
           "properties": {
             "branch_icon": "\ue0a0 ",
-            "cache_duration": "none"
+            "cache_duration": "none",
+            "mapped_branches": {
+              "feature/*": "✨ ",
+              "release/*": "🚀 ",
+              "hotfix/*": "🩹 ",
+              "bugfix/*": "🐛 ",
+              "support/*": "🩼 ",
+              "dev": "🛠️ ",
+              "master": "🗿 ",
+              "main": "🗿 "
+            }
           },
-          "template": "<#F3EFF5>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+          "template": "<#F3EFF5>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ",
           "foreground": "#F141A8",
           "type": "git",
           "style": "plain"
@@ -75,16 +85,24 @@
           "style": "plain"
         },
         {
-          "template": "<#F3EFF5>via</> <b>K</b> {{ .Full }} ",
-          "foreground": "#906cff",
+          "type": "react",
+          "style": "plain",
+          "display_mode": "always",
+          "foreground": "#81a1c1",
+          "template": "  {{ .Full }} ",
+          "extensions": "package.json"
+        },
+        {
+          "style": "plain",
           "type": "kotlin",
-          "style": "plain"
+          "foreground": "#906cff",
+          "template": "<#F3EFF5>via</> <b>K</b> {{ .Full }} "
         },
         {
           "type": "npm",
           "style": "plain",
           "foreground": "red",
-          "template": "<#F3EFF5>and</>  {{ .Full }} "
+          "template": "<#F3EFF5>and</>  {{ .Full }} "
         }
       ]
     },
