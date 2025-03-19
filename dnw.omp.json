@@ -50,7 +50,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }}<#F3EFF5>is</>  {{.Version}}{{ end }} {{ end }}",
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }}<#F3EFF5>is</>  {{.Version}}{{ end }}{{ end }}",
           "foreground": "#5EADF2",
           "type": "project",
           "style": "plain"
@@ -59,38 +59,29 @@
           "properties": {
             "cache_duration": "1h"
           },
-          "template": "{{ if .Full }}<#F3EFF5>with</> \ue7ba {{ .Full }} {{end}}",
-          "foreground": "#61dafb",
-          "type": "react",
-          "style": "plain"
-        },
-        {
-          "properties": {
-            "cache_duration": "1h"
-          },
-          "template": "<#F3EFF5>with</> <#7FD5EA>\ue627 {{ .Full }}</> ",
+          "template": "<#F3EFF5> with</> <#7FD5EA>\ue627 {{ .Full }}</>",
           "type": "go",
-          "style": "plain"
-        },
-        {
-          "type": "node",
-          "style": "plain",
-          "foreground": "#6CA35E",
-          "template": "<#F3EFF5>via</> 󰎙 {{ .Full }} "
-        },
-        {
-          "template": "<#F3EFF5>via</> \ue77f {{ .Full }} ",
-          "foreground": "#9780e5",
-          "type": "dotnet",
           "style": "plain"
         },
         {
           "type": "react",
           "style": "plain",
           "display_mode": "always",
-          "foreground": "#81a1c1",
-          "template": "  {{ .Full }} ",
+          "foreground": "#61dafb",
+          "template": "<#F3EFF5> with</>  {{ .Full }}",
           "extensions": "package.json"
+        },
+        {
+          "type": "node",
+          "style": "plain",
+          "foreground": "#6CA35E",
+          "template": "<#F3EFF5> via</> 󰎙 {{ .Full }}"
+        },
+        {
+          "template": "<#F3EFF5>via</> \ue77f {{ .Full }} ",
+          "foreground": "#9780e5",
+          "type": "dotnet",
+          "style": "plain"
         },
         {
           "style": "plain",
@@ -102,7 +93,7 @@
           "type": "npm",
           "style": "plain",
           "foreground": "red",
-          "template": "<#F3EFF5>and</>  {{ .Full }} "
+          "template": " <#F3EFF5>and</>  {{ .Full }}"
         }
       ]
     },
