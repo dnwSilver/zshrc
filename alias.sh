@@ -32,11 +32,13 @@ alias nrqf="npm run quality:codestyle"          # verify code quality
 alias nrqs="npm run quality:css"                # verify styles quality
 alias nrql="npm run quality:lint"               # verify linting
 alias nrqt="npm run quality:types"              # verify types
-alias nrte2e="npm run test:end2end"             # run end to end tests
+alias nrq="nrqf && nrqs && nrql && nrqt"        # verify all aspects
+alias nrte="npm run test:end2end"               # run end to end tests
+alias nrteu="npm run test:end2end:ui"           # run end to end tests
 alias nrtsd="npm run test:screenshots:docker"   # run docker for screenshots test
 alias nrtsu="npm run test:screenshots:update"   # update screenshots
 alias nrtu="npm run test:unit"                  # run unit tests
-
+alias nrts="npm run test:seeding"
 # DOTNET
 alias dnb="dotnet build"                                            # build project
 alias dnc="dotnet clean"                                            # cleanup bin and obj files
