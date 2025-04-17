@@ -25,3 +25,9 @@ Required CLI: [Oh My ZSH!](https://ohmyz.sh/), [Oh My ZSH! Plugin GIT](https://g
 | lfs-reset    | **lfsr**  | Reset lfs files                          |
 | clean        | **ghrc**  | Full reset repository                    |
 | tag          | **gtp**   | Create tag and push with current version |
+
+## Apps
+
+```bash
+brew install bitwarden dbeaver-community font-hack-nerd-font font-zed-mono-nerd-font iterm2 visual-studio-code translate-shell yq xmlstarlet xz k9s jq httpie htop helm go  gnupg gnu-sed bat eza git-lfs gitmoji midnight-commander sops telnet wget lazygit lazydocker openfortivpn nvm neovim oh-my-posh
+```
