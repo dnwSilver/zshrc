@@ -31,14 +31,14 @@
             "branch_icon": "\ue0a0 ",
             "cache_duration": "none",
             "mapped_branches": {
-              "feature/*": "✨ ",
-              "release/*": "🚀 ",
-              "hotfix/*": "🩹 ",
-              "bugfix/*": "🐛 ",
-              "support/*": "🩼 ",
-              "dev": "🛠️ ",
-              "master": "🗿 ",
-              "main": "🗿 "
+              "feature/*": "✨ feature/",
+              "release/*": "🚀 release/",
+              "hotfix/*": "🩹 hotfix/",
+              "bugfix/*": "🐛 bugfix/",
+              "support/*": "🩼 support/",
+              "dev": "🛠️ dev",
+              "master": "🗿 master",
+              "main": "🗿 main"
             }
           },
           "template": "<#F3EFF5>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ",
