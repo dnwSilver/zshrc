@@ -23,6 +23,7 @@ alias yp="rma && y && yb && ys"                                     # cleanup de
 
 # NPM
 alias ni="npm install"                          # install deps
+alias nu="nvm use"                              # use actual node version
 alias nrsb="nmp run storybook:build"            # build storybook
 alias nrsr="nmp run storybook:run"              # run storybook
 alias nrd="npm run dev"                         # run with development environment
@@ -39,6 +40,7 @@ alias nrtsd="npm run test:screenshots:docker"   # run docker for screenshots tes
 alias nrtsu="npm run test:screenshots:update"   # update screenshots
 alias nrtu="npm run test:unit"                  # run unit tests
 alias nrts="npm run test:seeding"
+
 # DOTNET
 alias dnb="dotnet build"                                            # build project
 alias dnc="dotnet clean"                                            # cleanup bin and obj files
